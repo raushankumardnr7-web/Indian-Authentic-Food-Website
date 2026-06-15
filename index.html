@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desi Tadka - Indian Foods</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">🇮🇳 Desi Tadka</div>
+
+        <input type="text" id="search" placeholder="Search food..." onkeyup="searchFood()">
+
+        <button onclick="openBill()">🧾 Bill</button>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Authentic Indian Food 🍛</h1>
+    </section>
+
+    <!-- FILTER -->
+    <section class="filters">
+        <button onclick="filterFood('all')">All</button>
+        <button onclick="filterFood('north')">North</button>
+        <button onclick="filterFood('south')">South</button>
+        <button onclick="filterFood('street')">Street</button>
+    </section>
+
+    <!-- FOOD LIST -->
+    <section class="container">
+        <div class="grid">
+
+            <div class="card" data-type="north">
+                <span class="badge">BEST</span>
+                <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950">
+                <h3>Butter Chicken</h3>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>₹299</p>
+                <button onclick="addCart('Butter Chicken',299)">Add 🍽️</button>
+            </div>
+
+            <div class="card" data-type="south">
+                <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7">
+                <h3>Masala Dosa</h3>
+                <div class="stars">⭐⭐⭐⭐</div>
+                <p>₹120</p>
+                <button onclick="addCart('Masala Dosa',120)">Add 🍽️</button>
+            </div>
+
+            <div class="card" data-type="street">
+                <img src="https://images.unsplash.com/photo-1604152135912-04a022e23696">
+                <h3>Pani Puri</h3>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>₹50</p>
+                <button onclick="addCart('Pani Puri',50)">Add 🍽️</button>
+            </div>
+
+            <div class="card" data-type="north">
+                <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398">
+                <h3>Paneer Butter Masala</h3>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>₹220</p>
+                <button onclick="addCart('Paneer Butter Masala',220)">Add 🍽️</button>
+            </div>
+
+            <div class="card" data-type="north">
+                <span class="badge">POPULAR</span>
+                <img src="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a">
+                <h3>Dal Makhani</h3>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>₹180</p>
+                <button onclick="addCart('Dal Makhani',180)">Add 🍽️</button>
+            </div>
+
+            <!-- ITEM 6 -->
+            <div class="card" data-type="north">
+                <img src="https://images.unsplash.com/photo-1630383249896-424e482df921">
+                <h3>Rajma Chawal</h3>
+                <div class="stars">⭐⭐⭐⭐</div>
+                <p>₹150</p>
+                <button onclick="addCart('Rajma Chawal',150)">Add 🍽️</button>
+            </div>
+
+            <!-- ITEM 7 -->
+            <div class="card" data-type="south">
+                <span class="badge">CHEF SPECIAL</span>
+                <img src="https://images.unsplash.com/photo-1668236543090-82eba5ee5976">
+                <h3>Idli Sambar</h3>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>₹90</p>
+                <button onclick="addCart('Idli Sambar',90)">Add 🍽️</button>
+            </div>
+
+            <!-- ITEM 8 -->
+            <div class="card" data-type="south">
+                <img src="https://images.unsplash.com/photo-1610192244261-3f33de3f55e4">
+                <h3>Uttapam</h3>
+                <div class="stars">⭐⭐⭐⭐</div>
+                <p>₹110</p>
+                <button onclick="addCart('Uttapam',110)">Add 🍽️</button>
+            </div>
+
+            <!-- ITEM 9 -->
+            <div class="card" data-type="street">
+                <span class="badge">HOT 🔥</span>
+                <img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84">
+                <h3>Pav Bhaji</h3>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>₹120</p>
+                <button onclick="addCart('Pav Bhaji',120)">Add 🍽️</button>
+            </div>
+
+            <!-- ITEM 10 -->
+            <div class="card" data-type="street">
+                <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc">
+                <h3>Samosa Chaat</h3>
+                <div class="stars">⭐⭐⭐⭐</div>
+                <p>₹80</p>
+                <button onclick="addCart('Samosa Chaat',80)">Add 🍽️</button>
+            </div>
+
+            <!-- ITEM 11 -->
+            <div class="card" data-type="street">
+                <span class="badge">NEW</span>
+                <img
+                    src="https://www.bing.com/th/id/OSK.ed1d3f510ad6f83ac63d64c4a6c7ae47?w=224&h=200&c=8&rs=1&qlt=90&o=6&dpr=1.8&pid=3.1&rm=2">
+                <h3>Vada Pav</h3>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>₹60</p>
+                <button onclick="addCart('Vada Pav',60)">Add 🍽️</button>
+            </div>
+
+            <!-- ITEM 12 -->
+            <div class="card" data-type="north">
+                <span class="badge">ROYAL</span>
+                <img src="https://images.unsplash.com/photo-1633945274309-2c16a7b5d1c8">
+                <h3>Shahi Paneer</h3>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>₹250</p>
+                <button onclick="addCart('Shahi Paneer',250)">Add 🍽️</button>
+            </div>
+
+            <!-- ITEM 13 -->
+            <div class="card" data-type="north">
+                <img src="https://images.unsplash.com/photo-1626074353765-517a681e40be">
+                <h3>Chicken Biryani</h3>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>₹350</p>
+                <button onclick="addCart('Chicken Biryani',350)">Add 🍽️</button>
+            </div>
+
+            <!-- ITEM 14 -->
+            <div class="card" data-type="street">
+                <span class="badge">SWEET</span>
+                <img src="https://images.unsplash.com/photo-1631452180539-96aca7d48617">
+                <h3>Jalebi</h3>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>₹100</p>
+                <button onclick="addCart('Jalebi',100)">Add 🍽️</button>
+            </div>
+
+            <!-- ITEM 15 -->
+            <div class="card" data-type="south">
+                <span class="badge">TRADITIONAL</span>
+                <img src="https://images.unsplash.com/photo-1617093727343-374698b1b08d">
+                <h3>South Indian Thali</h3>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>₹280</p>
+                <button onclick="addCart('South Indian Thali',280)">Add 🍽️</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CART -->
+    <div class="cart">
+        <h2>🛒 Cart</h2>
+        <div id="cartItems"></div>
+        <h3>Total: ₹<span id="total">0</span></h3>
+    </div>
+
+    <!-- BILL -->
+    <div class="bill" id="bill">
+        <h3>🧾 Bill</h3>
+        <div id="billItems"></div>
+        <h3>Total: ₹<span id="billTotal">0</span></h3>
+        <button onclick="placeOrder()">Order Now</button>
+    </div>
+
+    <button class="bill-btn" onclick="openBill()">View Bill</button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
